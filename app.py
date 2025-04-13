@@ -75,17 +75,17 @@ if page == "🏠 Home":
 
     cols = st.columns(4)
     card_styles = [
-        ("e3f2fd", "👩‍💻 About", "My background & skills", "👩‍💼 About Me"),
-        ("e8f5e9", "📂 Projects", "Data analysis work samples", "📁 Projects"),
-        ("fff8e1", "📜 Certifications", "My qualifications", "📜 Certifications"),
-        ("f3e5f5", "📬 Contact", "Let's connect!", "📬 Contact")
+        ("e3f2fd", "👩‍💻 About", "My background & skills"),
+        ("e8f5e9", "📂 Projects", "Data analysis work samples"),
+        ("fff8e1", "📜 Certifications", "My qualifications"),
+        ("f3e5f5", "📬 Contact", "Let’s connect!")
     ]
 
-    for i, (color, title, desc, target) in enumerate(card_styles):
+    for i, (color, title, desc) in enumerate(card_styles):
         with cols[i]:
             st.markdown(f"""
             <div style="background-color:#{color};padding:15px 10px;border-radius:10px;height:110px">
-                <h5 style="margin-bottom:5px;"><a href="#{target.replace(' ', '-')}" style="text-decoration:none;color:inherit;">{title}</a></h5>
+                <h5 style="margin-bottom:5px;">{title}</h5>
                 <p style="font-size:14px;">{desc}</p>
             </div>
             """, unsafe_allow_html=True)
@@ -97,14 +97,14 @@ if page == "🏠 Home":
     <div style="text-align:center;padding:25px;background-color:#f5f5f5;border-radius:10px">
         <h3 style="color:#2e4053;">📈 Ready to collaborate?</h3>
         <p style="font-size:16px;">
-            Explore my <a href="#📁-Projects">projects</a> or <a href="#📬-Contact">get in touch</a> to discuss how I can add value to your data-driven goals.
+            Explore my projects or get in touch to discuss how I can add value to your data-driven goals.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
 # ---------------------- ABOUT -------------------------
 elif page == "👩‍💼 About Me":
-    st.header("👩‍💼 About Me", anchor="about-me")
+    st.header("👩‍💼 About Me", anchor=False)
     
     # Intro Section
     col1, col2 = st.columns([2, 1], gap="large")
@@ -230,20 +230,9 @@ elif page == "👩‍💼 About Me":
     </div>
     """, unsafe_allow_html=True)
 
-    # Navigation link at bottom
-    st.markdown("""
-    <div style="text-align:center;margin-top:30px;">
-        <a href="#📁-Projects" style="text-decoration:none;">
-            <button style="background-color:#4285f4;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
-                View My Projects
-            </button>
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
-
 # ---------------------- PROJECTS -----------------------
 elif page == "📁 Projects":
-    st.header("📁 My Data Projects", anchor="projects")
+    st.header("📁 My Data Projects", anchor=False)
     
     st.markdown("""
     <div style="background-color:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:25px;border-left:4px solid #4285f4">
@@ -347,29 +336,13 @@ elif page == "📁 Projects":
     st.markdown("""
     <div style="text-align:center;padding:20px;background-color:#f0f2f6;border-radius:10px">
         <h4 style="margin:0;">Want to know more about any project?</h4>
-        <p style="margin:0;">Reach out via the <a href="#📬-Contact">Contact section</a> or connect with me on <a href='https://github.com/priyanka7411' target='_blank'>GitHub</a>!</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Navigation links at bottom
-    st.markdown("""
-    <div style="display:flex;justify-content:space-between;margin-top:30px;">
-        <a href="#👩‍💼-About-Me" style="text-decoration:none;">
-            <button style="background-color:#4285f4;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
-                ← About Me
-            </button>
-        </a>
-        <a href="#📜-Certifications" style="text-decoration:none;">
-            <button style="background-color:#4285f4;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
-                My Certifications →
-            </button>
-        </a>
+        <p style="margin:0;">Reach out via the Contact section or connect with me on <a href='https://github.com/priyanka7411' target='_blank'>GitHub</a>!</p>
     </div>
     """, unsafe_allow_html=True)
 
 # ---------------------- RESUME -------------------------
 elif page == "📄 Resume":
-    st.header("My Professional Resume", anchor="resume")
+    st.header("My Professional Resume", anchor=False)
     st.markdown("""
     <div style="background-color:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:20px">
     <h4 style="color:#2e4053;margin-top:0;">📌 Current as of {datetime.now().strftime('%B %Y')}</h4>
@@ -446,29 +419,13 @@ elif page == "📄 Resume":
     st.markdown("""
     <div style="text-align:center;padding:20px;background-color:#f5f5f5;border-radius:10px">
     <h3>Want to discuss opportunities?</h3>
-    <p>Feel free to <a href="#📬-Contact">contact me</a> after reviewing my qualifications!</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Navigation links at bottom
-    st.markdown("""
-    <div style="display:flex;justify-content:space-between;margin-top:30px;">
-        <a href="#📁-Projects" style="text-decoration:none;">
-            <button style="background-color:#4285f4;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
-                ← My Projects
-            </button>
-        </a>
-        <a href="#📜-Certifications" style="text-decoration:none;">
-            <button style="background-color:#4285f4;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
-                My Certifications →
-            </button>
-        </a>
+    <p>Feel free to <a href="#contact">contact me</a> after reviewing my qualifications!</p>
     </div>
     """, unsafe_allow_html=True)
 
 # ---------------------- CERTIFICATIONS -----------------
 elif page == "📜 Certifications":
-    st.header("My Certifications", anchor="certifications")
+    st.header("My Certifications", anchor=False)
     st.markdown("""
     <div style="background-color:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:20px">
     <h4 style="color:#2e4053;margin-top:0;">📚 Validated Skills & Qualifications</h4>
@@ -538,25 +495,9 @@ elif page == "📜 Certifications":
     </div>
     """, unsafe_allow_html=True)
 
-    # Navigation links at bottom
-    st.markdown("""
-    <div style="display:flex;justify-content:space-between;margin-top:30px;">
-        <a href="#📄-Resume" style="text-decoration:none;">
-            <button style="background-color:#4285f4;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
-                ← My Resume
-            </button>
-        </a>
-        <a href="#📬-Contact" style="text-decoration:none;">
-            <button style="background-color:#4285f4;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
-                Contact Me →
-            </button>
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
-
 # ---------------------- CONTACT -----------------------
 elif page == "📬 Contact":
-    st.header("Let's Connect", anchor="contact")
+    st.header("Let's Connect", anchor=False)
     st.markdown("""
     <div style="background-color:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:20px">
     <h4 style="color:#2e4053;margin-top:0;">💌 Open for opportunities and collaborations</h4>
@@ -628,17 +569,6 @@ elif page == "📬 Contact":
     <a href="https://twitter.com/" target="_blank">Twitter</a>
     </p>
     <p>Thank you for visiting my portfolio! 🙏</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Navigation link at bottom
-    st.markdown("""
-    <div style="text-align:center;margin-top:30px;">
-        <a href="#📜-Certifications" style="text-decoration:none;">
-            <button style="background-color:#4285f4;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
-                ← View My Certifications
-            </button>
-        </a>
     </div>
     """, unsafe_allow_html=True)
 
